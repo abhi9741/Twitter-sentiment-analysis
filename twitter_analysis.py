@@ -42,6 +42,17 @@ results = api.search(q="Mahanati")
 for result in results:
      print result.text
 
+#for searching tweets with a particular query
+
+public_tweets = api.search('Mahanati')
+i=0
+for i in range(0,3):
+for tweet in public_tweets:
+     print(tweet.text)
+     analysis = TextBlob(tweet.text)
+     print(analysis.sentiment)
+     print("")
+     i=i+1
 
 
 
