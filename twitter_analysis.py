@@ -82,27 +82,13 @@ for tweet in searched_tweets:
     tt=tweet.text
     ttbag=re.split(r"(\s+)",tt)
     tt1=ttbag[0]
-    print tt 
+    
 
+    if (tt1=="RT"):
+        abhi=5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    else:
+        print tt
+        
 
 
