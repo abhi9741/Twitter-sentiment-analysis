@@ -36,4 +36,12 @@ trendsName = ' '.join(names)
 print(trendsName)
 
 
+#findingtwets with a particular word
+results = api.search(q="Mahanati")
+
+for result in results:
+     print result.text
+
+
+
 
