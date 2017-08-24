@@ -43,11 +43,11 @@ for result in results:
      print result.text
 
 #for searching tweets with a particular query
-
+'''
 public_tweets = api.search('Mahanati')
 i=0
 for i in range(0,3):
-for tweet in public_tweets:
+ for tweet in public_tweets:
      print(tweet.text)
      analysis = TextBlob(tweet.text)
      print(analysis.sentiment)
@@ -60,6 +60,7 @@ max_tweets = 10
 searched_tweets = [status for status in t.Cursor(api.search, q=query).items(max_tweets)]
 for tweet in searched_tweets :
      print (tweet.text)
+'''
 query = 'python'
 max_tweets = 14
 searched_tweets = []
