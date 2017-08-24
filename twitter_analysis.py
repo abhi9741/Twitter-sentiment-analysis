@@ -11,7 +11,7 @@ ats='YVrScxouBU6aa1q57SSxfnxRG70D6oqNlZFHK0v6iykbY'    #ats stands for acess tok
 auth=ah(ck,cs)     #auth stands for authorisation
 auth.set_access_token(at,ats)
 api=t.API(auth)
-
+'''
 #for finding the countries/places available for finding trends
 trends = api.trends_available()
 for trend in trends:
@@ -43,7 +43,7 @@ for result in results:
      print result.text
 
 #for searching tweets with a particular query
-'''
+
 public_tweets = api.search('Mahanati')
 i=0
 for i in range(0,3):
@@ -61,6 +61,7 @@ searched_tweets = [status for status in t.Cursor(api.search, q=query).items(max_
 for tweet in searched_tweets :
      print (tweet.text)
 '''
+
 query = 'python'
 max_tweets = 14
 searched_tweets = []
