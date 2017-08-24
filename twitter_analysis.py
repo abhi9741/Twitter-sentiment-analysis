@@ -54,9 +54,55 @@ for tweet in public_tweets:
      print("")
      i=i+1
 
+
 query = 'python'
 max_tweets = 10
 searched_tweets = [status for status in t.Cursor(api.search, q=query).items(max_tweets)]
 for tweet in searched_tweets :
      print (tweet.text)
+query = 'python'
+max_tweets = 14
+searched_tweets = []
+last_id = -1
+while len(searched_tweets) < max_tweets:
+    count = max_tweets - len(searched_tweets)
+    try:
+        new_tweets = api.search(q=query, count=count, max_id=str(last_id - 1))
+        if not new_tweets:
+            break
+        searched_tweets.extend(new_tweets)
+        last_id = new_tweets[-1].id
+    except tweepy.TweepError as e:
+        print "error , following query cannot be searched at current time"   # depending on TweepError.code, one may want to retry or wait
+        print "the error code forthe above error is:"
+        print e
+
+        break
+for tweet in searched_tweets:
+    tt=tweet.text
+    ttbag=re.split(r"(\s+)",tt)
+    tt1=ttbag[0]
+    print tt 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
