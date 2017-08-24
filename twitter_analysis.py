@@ -54,7 +54,6 @@ for tweet in public_tweets:
      print("")
      i=i+1
 
-
 query = 'python'
 max_tweets = 10
 searched_tweets = [status for status in t.Cursor(api.search, q=query).items(max_tweets)]
@@ -82,13 +81,14 @@ for tweet in searched_tweets:
     tt=tweet.text
     ttbag=re.split(r"(\s+)",tt)
     tt1=ttbag[0]
-    
+
 
     if (tt1=="RT"):
         abhi=5
 
     else:
         print tt
-        
+        analysis=TextBlob(tt)
+        print analysis.sentiment
 
 
