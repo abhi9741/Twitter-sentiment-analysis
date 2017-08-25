@@ -125,4 +125,3 @@ avg_s=s/n
 
 print "the average polrity of the query inputed is : " , avg_p
 print "the average subjectivity polarity  is : ", avg_s
-'''
