@@ -16,9 +16,11 @@ api=t.API(auth)
 trends = api.trends_available()
 for trend in trends:
     print trend
+print "_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________"
+print"go through the above json string, find your place name and geoid of that place "
 
-"go through the above json string, find your place name and geoid of that place "
-geoid=int(input("enter the geocode of the place at which you want to get top twitter trends"))
+
+geoid=int(input("enter the geocode of the place at which you want to get top twitter trends : "))
 # for finding trends at a current place
 trends_at_a_place=api.trends_place(geoid)
 
@@ -38,6 +40,12 @@ names = [trend['name'] for trend in trends]
 # put all the names together with a ' ' separating them
 trendsName = ' '.join(names)
 print(trendsName)
+print "__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________"
+print "go through the above trends and input a particular trend "
+
+
+
+query=raw_input("enter the trend you want to analyze (*case sensitive)")
 
 '''
 #findingtwets with a particular word
@@ -70,9 +78,9 @@ for tweet in searched_tweets :
 
 
 
-'''
-query = 'python'
-max_tweets = 14
+
+
+max_tweets = int(input("total no. of tweets you want to analyse"))
 searched_tweets = []
 last_id = -1
 while len(searched_tweets) < max_tweets:
