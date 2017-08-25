@@ -11,14 +11,18 @@ ats='YVrScxouBU6aa1q57SSxfnxRG70D6oqNlZFHK0v6iykbY'    #ats stands for acess tok
 auth=ah(ck,cs)     #auth stands for authorisation
 auth.set_access_token(at,ats)
 api=t.API(auth)
-'''
+
 #for finding the countries/places available for finding trends
 trends = api.trends_available()
 for trend in trends:
     print trend
 
+"go through the above json string, find your place name and geoid of that place "
+geoid=int(input("enter the geocode of the place at which you want to get top twitter trends"))
 # for finding trends at a current place
-trends_at_a_place=api.trends_place(2295414)
+trends_at_a_place=api.trends_place(geoid)
+
+
 
 
 # trends_at_a_place is a list with only one element in it, which is a dict
@@ -35,7 +39,7 @@ names = [trend['name'] for trend in trends]
 trendsName = ' '.join(names)
 print(trendsName)
 
-
+'''
 #findingtwets with a particular word
 results = api.search(q="Mahanati")
 
@@ -59,6 +63,12 @@ max_tweets = 10
 searched_tweets = [status for status in t.Cursor(api.search, q=query).items(max_tweets)]
 for tweet in searched_tweets :
      print (tweet.text)
+
+'''
+
+# best  search method for searching most recent tweets in order
+
+
 
 '''
 query = 'python'
@@ -107,3 +117,4 @@ avg_s=s/n
 
 print "the average polrity of the query inputed is : " , avg_p
 print "the average subjectivity polarity  is : ", avg_s
+'''
