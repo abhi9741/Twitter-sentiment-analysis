@@ -21,7 +21,7 @@ for trend in trends:
 trends_at_a_place=api.trends_place(2295414)
 
 
-# trends_at_a_place is a list with only one element in it, which is a dict  
+# trends_at_a_place is a list with only one element in it, which is a dict
 trendsp=trends_at_a_place
 data = trendsp[0]
 
@@ -62,10 +62,11 @@ for tweet in searched_tweets :
      print (tweet.text)
 '''
 
-query = 'python'
-max_tweets = 14
+query = 'mahesh'
+max_tweets =17
 searched_tweets = []
 last_id = -1
+gilla=0
 while len(searched_tweets) < max_tweets:
     count = max_tweets - len(searched_tweets)
     try:
@@ -73,24 +74,30 @@ while len(searched_tweets) < max_tweets:
         if not new_tweets:
             break
         searched_tweets.extend(new_tweets)
+        tweet_check=searched_tweets[gilla].text
+
+
+
         last_id = new_tweets[-1].id
-    except tweepy.TweepError as e:
+
+
+    except t.TweepError as e:
         print "error , following query cannot be searched at current time"   # depending on TweepError.code, one may want to retry or wait
         print "the error code forthe above error is:"
         print e
 
         break
+
+
 for tweet in searched_tweets:
     tt=tweet.text
     ttbag=re.split(r"(\s+)",tt)
     tt1=ttbag[0]
-    
+
+
 
     if (tt1=="RT"):
         abhi=5
 
     else:
         print tt
-        
-
-
